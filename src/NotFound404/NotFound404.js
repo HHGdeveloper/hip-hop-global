@@ -1,0 +1,10 @@
+import React from 'react';
+
+const NotFound404 = () => (
+    <>
+        <h1>404 error</h1>
+        <h2>page not found</h2>
+    </>
+);
+
+export default NotFound404;

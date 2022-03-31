@@ -1,11 +1,7 @@
-import './App.css';
+import Layout from './Layout';
 
-function App() {
-  return (
-    <div className="App">
-      Hip-Hop Global
-    </div>
-  );
-}
+const App = () => {
+    return <Layout />;
+};
 
 export default App;
