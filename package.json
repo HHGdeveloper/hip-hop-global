@@ -1,7 +1,13 @@
 {
-  "name": "hhg-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "hip-hop global",
+  "version": "1.0.0",
+  "description": "Website for Hip-Hop Global, LLC",
+  "author": "Sari Morninghawk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HHGdeveloper/hip-hop-global.git"
+  },
+  "license": "UNLICENSED",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
