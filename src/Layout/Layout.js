@@ -13,7 +13,7 @@ const Layout = () => {
             return true;
         }
 
-        if (location.pathname === '/') {
+        if (location.pathname === '/' || !location.pathname) {
             location.pathname = '/home';
         }
     };

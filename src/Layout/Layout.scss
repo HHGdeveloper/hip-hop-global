@@ -25,14 +25,16 @@
 
 .listInline {
     @media only screen and (min-width: 768px) {
-        font-size: 24px;
+        font-size: 40px;
         padding-inline-start: 40px;
         justify-content: start;
     }
+    font-family: "SpriteGraffiti-Regular";
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     list-style-type: none;
-    font-size: 18px;
+    font-size: 30px;
     padding-inline-start: 0;
     margin: 0;
 
@@ -41,6 +43,7 @@
             margin: 45px 20px 0 0;
         }
         margin: 0 10px;
+        font-weight: 500;
 
         &:link,
         &:visited {
@@ -49,21 +52,21 @@
         }
 
         &:hover {
-            color: #c00;
+            color: #fdd101;
             text-decoration: underline;
         }
 
         &.active:link,
         &.active:visited,
         &.active:hover {
-            color: #c00;
+            color: #fdd101;
             text-decoration: none;
         }
     }
 }
 
 .mainContent {
-    border-top: 1px solid #c00;
+    border-top: 1px solid #fdd101;
     display: flex;
     justify-content: center;
 }
