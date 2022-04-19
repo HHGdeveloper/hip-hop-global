@@ -14,6 +14,17 @@ body {
   margin: 0;
   background-color: #013151;
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a:link,
+a:visited {
+  color: #05f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

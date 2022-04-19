@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom';
 import NotFound404 from '../NotFound404';
 import menuItems from './assets/menuItems.js';
@@ -36,6 +36,8 @@ const Layout = () => {
                 </Route>
             );
         }
+
+        return null;
     });
 
     return (
