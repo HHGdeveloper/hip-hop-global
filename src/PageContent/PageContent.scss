@@ -1,27 +1,46 @@
 .container {
     @media only screen and (min-width: 768px) {
-        margin: 20px auto;
+        margin: 0 auto;
         padding: 10px 25px;
     }
     width: 100%;
     max-width: 1200px;
-    margin: 10px auto;
+    margin: auto;
     padding: 10px;
 }
 
 .header {
+    @media only screen and (min-width: 768px) {
+        margin-top: -40px;
+    }
     text-align: center;
-    color: #c00;
+    color: #fdd101;
+    margin-top: -30px;
+
+    h1 {
+        @media only screen and (min-width: 768px) {
+            font-size: 100px;
+            margin-bottom: 20px;
+        }
+        font-family: "SpriteGraffiti-Regular";
+        font-size: 50px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
 }
 
 .main {
     @media only screen and (min-width: 768px) {
-        padding:  25px;
-        min-height: calc(100vh - 380px);
+        min-height: calc(100vh - 420px);
+        border-radius: 15px;
+        font-size: 28px;
     }
-    padding:  10px;
-    background-color: #fff;
+    background-color: #faf6e4;
     color: #222;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.75;
     min-height: calc(100vh - 350px);
     margin-bottom: 20px;
     border-radius: 5px;

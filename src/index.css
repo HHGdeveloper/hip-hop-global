@@ -1,16 +1,30 @@
-body {
-  margin: 0;
-  background-color: #000;
-  color:  #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.75;
+@font-face {
+  font-family: 'SpriteGraffiti-Regular';
+  src: url('./fonts/SpriteGraffiti-Regular.woff2') format('woff2'),
+    url('./fonts/SpriteGraffiti-Regular.woff') format('woff');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/roboto-regular-webfont.woff2') format('woff2'),
+    url('./fonts/roboto-regular-webfont.woff') format('woff');
+}
+
+body {
+  margin: 0;
+  background-color: #013151;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a:link,
+a:visited {
+  color: #05f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
