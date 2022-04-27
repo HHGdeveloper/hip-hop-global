@@ -1,5 +1,5 @@
 .menu {
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 985px) {
         display: flex;
         justify-content: center;
         max-height: 130px;
@@ -10,7 +10,7 @@
 }
 
 .logoWrapper {
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 985px) {
         width: 150px;
         margin: 0 0;
         overflow: hidden;
@@ -24,7 +24,7 @@
 }
 
 .listInline {
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 985px) {
         font-size: 40px;
         padding-inline-start: 40px;
         justify-content: start;
@@ -39,7 +39,7 @@
     margin: 0;
 
     a {
-        @media only screen and (min-width: 768px) {
+        @media only screen and (min-width: 985px) {
             margin: 45px 20px 0 0;
         }
         margin: 0 10px;

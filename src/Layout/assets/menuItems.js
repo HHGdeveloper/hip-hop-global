@@ -16,6 +16,10 @@ const menuItems = [
         link: '/shop',
         lazy: 'Shop'
     }, {
+        text: 'Events',
+        link: '/events',
+        lazy: 'Events'
+    }, {
         text: 'Contact',
         link: '/contact',
         lazy: 'Contact'
