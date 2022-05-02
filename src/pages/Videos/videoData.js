@@ -16,7 +16,7 @@ const videoData = [
         date: '2022.03.01',
         length: 8.39,
         description: '',
-        keywords: ['Asia', 'music', 'other']
+        keywords: ['asia', 'music', 'other']
     }, {
         url: 'https://player.vimeo.com/video/687289852',
         thumbnail: 'BREADTVPromo',
@@ -34,15 +34,8 @@ const videoData = [
         description: '',
         keywords: ['film', 'music videos', 'video production', 'demo reel', 'movie', 'productions']
     }
-    // , {
-    //     url: 'https://player.vimeo.com/video/681017280',
+    //     url: 'https://player.vimeo.com/video/681017280', NOT WORKING
     //     thumbnail: './assets/HipHopAfrica.png',
-    //     title: 'Hip Hop Africa',
-    //     date: '',
-    //     length: '',
-    //     description: '',
-    //     keywords: ['', '', '']
-    // }
 ];
 
 const defaultData = _.orderBy(videoData, ['date'], ['desc']);
@@ -51,25 +44,4 @@ const titleData = _.orderBy(videoData, ['title'], ['asc']);
 const shortToLongData = _.orderBy(videoData, ['length'], ['asc']);
 const longToShortData = _.orderBy(videoData, ['length'], ['desc']);
 
-// console.log(longToShortData);
-
-const sortButtons = [
-    {
-        text: 'Most recent',
-        data: defaultData
-    }, {
-        text: 'Oldest to newest',
-        data: oldestToNewestData
-    }, {
-        text: 'Alphabetical by title',
-        data: titleData
-    }, {
-        text: 'Shortest to longest',
-        data: shortToLongData
-    }, {
-        text: 'Longest to shortest',
-        data: longToShortData
-    }
-];
-
-export { defaultData, oldestToNewestData, titleData, shortToLongData, longToShortData, sortButtons };
+export { defaultData, oldestToNewestData, titleData, shortToLongData, longToShortData };

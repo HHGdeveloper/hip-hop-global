@@ -1,23 +1,48 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import CurrentVideo from './CurrentVideo.js';
-import { defaultData, oldestToNewestData, titleData, shortToLongData, longToShortData, sortButtons } from './videoData.js';
+import { defaultData, oldestToNewestData, titleData, shortToLongData, longToShortData } from './videoData.js';
 import './Videos.scss';
 
 const msg = ['', 'No videos match your search criteria'];
+const sortButtons = [
+    {
+        text: 'Most recent',
+        data: defaultData
+    }, {
+        text: 'Oldest to newest',
+        data: oldestToNewestData
+    }, {
+        text: 'Alphabetical by title',
+        data: titleData
+    }, {
+        text: 'Shortest to longest',
+        data: shortToLongData
+    }, {
+        text: 'Longest to shortest',
+        data: longToShortData
+    }
+];
 
 const Content = () => {
     const [currentData, setCurrentData] = useState(defaultData);
+    const [currentVideo, setCurrentVideo] = useState(0);
     const [playerWidth, setPlayerWidth] = useState(null);
     const [playerHeight, setPlayerHeight] = useState(null);
-    const [playerURL, setPlayerURL] = useState(currentData[0].url);
-    const [currentVideo, setCurrentVideo] = useState(0);
     const [keywordsValue, setKeywordsValue] = useState('');
     const [active, setActive] = useState(0);
     const [message, setMessage] = useState(msg[0]);
     const playerRef = useRef();
 
+    const getCurrentVideo = data =>
+        data.map((video, index) => {
+            if (video.url === currentData[currentVideo].url) {
+                return index;
+            }
+
+            return 0;
+        });
+
     const handleThumbClick = index => {
-        setPlayerURL(currentData[index].url);
         setCurrentVideo(index);
         setMessage(msg[0]);
     };
@@ -30,66 +55,59 @@ const Content = () => {
         setMessage(msg[0]);
         setActive(isActive);
         setCurrentData(data);
-        data.map((video, index) => {
-            if (video.url === playerURL) {
-                setCurrentVideo(index);
-            }
-        });
+        setCurrentVideo(getCurrentVideo(data)[0]);
     };
     const handleKeywords = e => setKeywordsValue(e.target.value);
 
     const filterVideos = () => {
-        const keywordFilter = 'keywords';
-        const titleFilter = 'title';
         const keyword = keywordsValue.toLowerCase();
         const keywordData = [];
         const titleData = [];
 
         setMessage(msg[0]);
+        setActive(-1);
 
-        currentData.map((data, index) => (
+        defaultData.map((data, index) => (
             data.keywords.map(key => {
                 if (key === keyword) {
-                    keywordData.push(currentData[index]);
+                    keywordData.push(defaultData[index]);
                 }
+
+                return null;
             })
         ));
 
-        currentData.map((data, index) => (
+        defaultData.map((data, index) => (
             data.title.toLowerCase().split(' ').map(key => {
                 if (key === keyword) {
-                    titleData.push(currentData[index]);
+                    titleData.push(defaultData[index]);
                 }
+
+                return null;
             })
         ));
 
         if (!keywordData.length && !titleData.length) {
-            setMessage(msg[1]);
+            setMessage(`${msg[1]} "${keyword}"`);
+
+            return null;
         }
 
-        if (!keywordData.length && titleData.length) {
-            setCurrentData(titleData);
-        }
+        const newData = keywordData.concat(titleData);
 
-        if (!titleData.length && keywordData.length) {
-            setCurrentData(keywordData);
-        }
-
-        if (keywordData.length && titleData.length) {
-            const newData = keywordData.concat(titleData);
-
-            for (let i = 0; i < newData.length; ++i) {
-                for (let j = (i + 1); j < newData.length; ++j) {
-                    if(newData[i] === newData[j]) {
-                        newData.splice(j--, 1);
-                    }
-                
+        for (let i = 0; i < newData.length; ++i) {
+            for (let j = (i + 1); j < newData.length; ++j) {
+                if(newData[i] === newData[j]) {
+                    newData.splice(j--, 1);
                 }
+            
             }
-
-            setCurrentData(newData);
         }
-    }
+
+        setCurrentData(newData);
+        setCurrentVideo(getCurrentVideo(newData)[0]);
+        setKeywordsValue('');
+    };
 
     const renderThumbnails =
         currentData.map((video, index) => {
@@ -144,6 +162,7 @@ const Content = () => {
         };
     }, [getPlayerHeight]);
 
+
     return (
         <>
             <div className="sortButtons">
@@ -158,7 +177,7 @@ const Content = () => {
             <div className="videoLayout">
                 <div className="playerWrapper">
                     <div className="player" ref={playerRef}>
-                        <CurrentVideo controls height={playerHeight} url={playerURL} width={playerWidth} />
+                        <CurrentVideo controls height={playerHeight} url={currentData[currentVideo].url} width={playerWidth} />
                     </div>
                     <h2>{currentData[currentVideo].title}</h2>
                     <div className="time">{currentData[currentVideo].length.toString().replace('.', ':')}</div>
