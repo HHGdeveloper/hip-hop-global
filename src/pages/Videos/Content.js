@@ -57,10 +57,10 @@ const Content = () => {
         setCurrentData(data);
         setCurrentVideo(getCurrentVideo(data)[0]);
     };
-    const handleKeywords = e => setKeywordsValue(e.target.value);
+    const handleKeywords = e => setKeywordsValue(e.target.value.toUpperCase());
 
     const filterVideos = () => {
-        const keyword = keywordsValue.toLowerCase();
+        const keyword = keywordsValue.toUpperCase();
         const keywordData = [];
         const titleData = [];
 
@@ -78,7 +78,7 @@ const Content = () => {
         ));
 
         defaultData.map((data, index) => (
-            data.title.toLowerCase().split(' ').map(key => {
+            data.title.toUpperCase().split(' ').map(key => {
                 if (key === keyword) {
                     titleData.push(defaultData[index]);
                 }
@@ -166,9 +166,9 @@ const Content = () => {
     return (
         <>
             <div className="sortButtons">
+                <div className="message">{message}</div>
                 {renderSortButtons}
                 <div className="keywordsWrapper">
-                    <div className="message">{message}</div>
                     <label htmlFor="keywords" id="label-keywords">Keywords</label>
                     <input id="keywords" type="text" value={keywordsValue} onChange={handleKeywords} />
                     <button className="btnSort active" onClick={filterVideos}>Find videos</button>
@@ -179,8 +179,11 @@ const Content = () => {
                     <div className="player" ref={playerRef}>
                         <CurrentVideo controls height={playerHeight} url={currentData[currentVideo].url} width={playerWidth} />
                     </div>
-                    <h2>{currentData[currentVideo].title}</h2>
-                    <div className="time">{currentData[currentVideo].length.toString().replace('.', ':')}</div>
+                    <div className="titleWrapper">
+                        <h2>{currentData[currentVideo].title}</h2>
+                        <div className="time">{currentData[currentVideo].length.toString().replace('.', ':')}</div>
+                    </div>
+                    <div className="description">{currentData[currentVideo].description}</div>
                 </div>
                 <div className="thumbnails">
                     {renderThumbnails}

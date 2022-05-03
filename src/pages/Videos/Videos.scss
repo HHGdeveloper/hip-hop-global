@@ -6,6 +6,43 @@
     display: block;
 }
 
+.sortButtons {
+    @media only screen and (min-width: 1000px) {
+        justify-content: space-between;
+    }
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+
+    .btnSort {
+        @media only screen and (min-width: 1000px) {
+            margin-bottom: 0;
+        }
+        border: none;
+        border-radius: 5px;
+        background-color: #faf6e4;
+        margin: 0 5px 5px;
+
+        &.active {
+            background-color: #fdd101;
+        }
+    }
+
+    label {
+        color: #fff;
+        margin-right: 5px;
+    }
+
+    .message {
+        position: absolute;
+        top: -20px;
+        right: 0;
+        color: #e33501;
+    }
+}
+
 .playerWrapper {
     @media only screen and (min-width: 1000px) {
         margin: 0 20px 0 0;
@@ -15,21 +52,38 @@
     margin-bottom: 50px;
 
     .player {
-        margin-bottom: -15px;
+        margin: 0;
     }
 
-    h2 {
-        @media only screen and (min-width: 1000px) {
-            font-size: 32px;
+    .titleWrapper {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            @media only screen and (min-width: 1000px) {
+                font-size: 32px;
+                line-height: 38px;
+                padding: 0;
+            }
+            padding: 0 7px;
         }
-        margin-bottom: 2px;
+
+        .time {
+            margin-left: 15px;
+            padding: 3px 10px;
+            background-color: #000;
+            max-height: 25px;
+        }
     }
 
-    .time {
-        margin-left: 5px;
-        padding: 3px 10px;
-        background-color: #000;
-        display: inline-block;
+    .description {
+        @media only screen and (min-width: 1000px) {
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 50px;
+            padding: 0;
+        }
+        padding: 0 7px;
     }
 }
 
@@ -70,38 +124,5 @@
             background-color: #000;
             padding: 2px 5px;
         }
-    }
-}
-
-.sortButtons {
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-
-    .btnSort {
-        border: none;
-        border-radius: 5px;
-        background-color: #faf6e4;
-        margin: 0 5px;
-
-        &.active {
-            background-color: #fdd101;
-        }
-    }
-
-    label {
-        color: #fff;
-        margin-right: 5px;
-    }
-
-    .keywordsWrapper {
-        position: relative;
-    }
-
-    .message {
-        position: absolute;
-        top: -20px;
-        right: 0;
-        color: #e33501;
     }
 }
