@@ -1,9 +1,7 @@
 import PageContent from '../../PageContent';
+import ContactForm from './ContactForm.js';
 
-const content = (
-    <p>Contact info goes here</p>
-);
 
-const Contact = () => <PageContent content={content} title="Contact us" />;
+const Contact = () => <PageContent content={<ContactForm />} title="Contact us" />;
 
 export default Contact;
