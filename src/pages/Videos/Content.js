@@ -164,7 +164,7 @@ const Content = () => {
 
 
     return (
-        <>
+        <div className="videosWrapper">
             <div className="sortButtons">
                 <div className="message">{message}</div>
                 {renderSortButtons}
@@ -189,7 +189,7 @@ const Content = () => {
                     {renderThumbnails}
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -1,128 +1,130 @@
-.videoLayout {
-    @media only screen and (min-width: 1000px) {
-        display: flex;
-    }
-    color: #fff;
-    display: block;
-}
-
-.sortButtons {
-    @media only screen and (min-width: 1000px) {
-        justify-content: space-between;
-    }
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-
-    .btnSort {
+.videosWrapper {
+    .videoLayout {
         @media only screen and (min-width: 1000px) {
-            margin-bottom: 0;
+            display: flex;
         }
-        border: none;
-        border-radius: 5px;
-        background-color: #faf6e4;
-        margin: 0 5px 5px;
-
-        &.active {
-            background-color: #fdd101;
-        }
-    }
-
-    label {
         color: #fff;
-        margin-right: 5px;
+        display: block;
     }
 
-    .message {
-        position: absolute;
-        top: -20px;
-        right: 0;
-        color: #e33501;
-    }
-}
-
-.playerWrapper {
-    @media only screen and (min-width: 1000px) {
-        margin: 0 20px 0 0;
-        width: calc(80% - 20px);
-    } 
-    display: block;
-    margin-bottom: 50px;
-
-    .player {
-        margin: 0;
-    }
-
-    .titleWrapper {
+    .sortButtons {
+        @media only screen and (min-width: 1000px) {
+            justify-content: space-between;
+        }
+        margin-bottom: 15px;
         display: flex;
-        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
 
-        h2 {
+        .btnSort {
             @media only screen and (min-width: 1000px) {
-                font-size: 32px;
-                line-height: 38px;
+                margin-bottom: 0;
+            }
+            border: none;
+            border-radius: 5px;
+            background-color: #faf6e4;
+            margin: 0 5px 5px;
+
+            &.active {
+                background-color: #fdd101;
+            }
+        }
+
+        label {
+            color: #fff;
+            margin-right: 5px;
+        }
+
+        .message {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            color: #e33501;
+        }
+    }
+
+    .playerWrapper {
+        @media only screen and (min-width: 1000px) {
+            margin: 0 20px 0 0;
+            width: calc(80% - 20px);
+        } 
+        display: block;
+        margin-bottom: 50px;
+
+        .player {
+            margin: 0;
+        }
+
+        .titleWrapper {
+            display: flex;
+            align-items: center;
+
+            h2 {
+                @media only screen and (min-width: 1000px) {
+                    font-size: 32px;
+                    line-height: 38px;
+                    padding: 0;
+                }
+                padding: 0 7px;
+            }
+
+            .time {
+                margin-left: 15px;
+                padding: 3px 10px;
+                background-color: #000;
+                max-height: 25px;
+            }
+        }
+
+        .description {
+            @media only screen and (min-width: 1000px) {
+                font-size: 20px;
+                line-height: 28px;
+                margin-bottom: 50px;
                 padding: 0;
             }
             padding: 0 7px;
         }
-
-        .time {
-            margin-left: 15px;
-            padding: 3px 10px;
-            background-color: #000;
-            max-height: 25px;
-        }
     }
 
-    .description {
+    .thumbnails {
         @media only screen and (min-width: 1000px) {
-            font-size: 20px;
-            line-height: 28px;
-            margin-bottom: 50px;
-            padding: 0;
+            width: 20%;
         }
-        padding: 0 7px;
-    }
-}
-
-.thumbnails {
-    @media only screen and (min-width: 1000px) {
-        width: 20%;
-    }
-    width: 100%;
-    margin-bottom: 20px;
-
-    .thumbnail {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
-        color: #fff;
-        text-align: left;
         width: 100%;
-        height: auto;
-        position: relative;
-        margin: 0 0 30px;
-        padding: 0;
-        cursor: pointer;
+        margin-bottom: 20px;
 
-        img {
+        .thumbnail {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            color: #fff;
+            text-align: left;
             width: 100%;
-        }
+            height: auto;
+            position: relative;
+            margin: 0 0 30px;
+            padding: 0;
+            cursor: pointer;
 
-        .title {
-            font-size: 20px;
-            font-weight: 700;
-            text-align: center;
-        }
+            img {
+                width: 100%;
+            }
 
-        .time {
-            position: absolute;
-            left: 0;
-            display: inline-block;
-            background-color: #000;
-            padding: 2px 5px;
+            .title {
+                font-size: 20px;
+                font-weight: 700;
+                text-align: center;
+            }
+
+            .time {
+                position: absolute;
+                left: 0;
+                display: inline-block;
+                background-color: #000;
+                padding: 2px 5px;
+            }
         }
     }
 }
