@@ -1,9 +1,7 @@
 import PageContent from '../../PageContent';
+import Calendar from './Calendar.js';
 
-const content = (
-    <p>A calendar of hip-hop global events goes here</p>
-);
 
-const Events = () => <PageContent content={content} title="Calendar of Events" />;
+const Events = () => <PageContent content={<Calendar />} title="Calendar of Events" />;
 
 export default Events;
