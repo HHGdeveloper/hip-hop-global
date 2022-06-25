@@ -22,13 +22,13 @@ export default menuItems;
 
 /*
     , {
-        text: 'Shop',
-        link: '/shop',
-        lazy: 'Shop'
-    }, {
         text: 'Events',
         link: '/events',
         lazy: 'Events'
+    }, {
+        text: 'Shop',
+        link: '/shop',
+        lazy: 'Shop'
     }
     
 */
