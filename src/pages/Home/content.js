@@ -5,7 +5,7 @@ import image3 from './assets/image3.png';
 import image4 from './assets/image4.png';
 
 export const content = (
-    <>
+    <div className="homeWrapper">
         <img alt="" src={image1} />
         <p className="content">Hip-Hop Global is a company based in NYC creating a world-wide community of musicians, artists, designers, film makers, producers, and others who are making a supportive environment to promote hip-hop as a lifestyle—a culture—that transcends traditional borders, languages, and overcomes discrimination.</p>
         <img alt="" src={image2} />
@@ -18,5 +18,5 @@ export const content = (
         <p className="content">Support our global neighborhood of artists by <a href="/shop">shopping</a> at our exclusive hip-hop shop.</p>
         <p className="content"><a href="/contact">Tell us what you think</a> about hip-hop, about the music, the website, all of it. <a href="/contact">Upload a video</a> and maybe it will be featured on the site.</p>
         <img alt="" className="bottomImage" src={image4} />
-    </>
+    </div>
 );

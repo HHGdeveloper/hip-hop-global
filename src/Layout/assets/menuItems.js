@@ -12,10 +12,6 @@ const menuItems = [
         link: '/artists',
         lazy: 'Artists'
     }, {
-        text: 'Shop',
-        link: '/shop',
-        lazy: 'Shop'
-    }, {
         text: 'Contact',
         link: '/contact',
         lazy: 'Contact'
@@ -23,3 +19,16 @@ const menuItems = [
 ];
 
 export default menuItems;
+
+/*
+    , {
+        text: 'Shop',
+        link: '/shop',
+        lazy: 'Shop'
+    }, {
+        text: 'Events',
+        link: '/events',
+        lazy: 'Events'
+    }
+    
+*/

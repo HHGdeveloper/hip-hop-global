@@ -1,9 +1,6 @@
 import PageContent from '../../PageContent';
+import Content from './Content.js';
 
-const content = (
-    <p>Videos go here</p>
-);
-
-const Videos = () => <PageContent content={content} title="Videos" />;
+const Videos = () => <PageContent content={<Content />} noBackground title="Videos" />;
 
 export default Videos;
